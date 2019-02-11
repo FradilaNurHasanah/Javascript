@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- load jquery and bootstrap js -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+     function Login(){
+       var Username = document.getElementById('username').value;
+       // mengambil isi dari username untuk di taruh di bagian username
+       var Password = document.getElementById('password').value;
+       if (Username == "Fradila" && Password == "2702") {
+         var pesan = document.getElementById("pesan");
+         pesan.className = "";
+         // mengosongkan nama class yang id pesan
+         pesan.classList.add("alert");
+         // menambahkan list class pada elemen alert
+         pesan.classList.add("alert-success");
+         pesan.innerHTML = "Selamat! Anda Berhasil Login";
+         // value : khusus inputan
+         // innerHTML : mengambil komponen atau elemen yang berada di dalam elemen yang dipakai
+       }else{
+         var pesan = document.getElementById("pesan");
+         pesan.className = "";
+         pesan.classList.add("alert");
+         pesan.classList.add("alert-danger");
+         pesan.innerHTML = "Anda Gagal Login:( Silahkan Coba Lagi";
+       }
+     }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card col-sm-6">
+        <div class="card-header bg-info text-white">
+          <h4>Jangan Lupa Login!</h4>
+        </div>
+        <div class="card-body">
+          <div id="pesan">
+          </div>
+          Username
+          <div class="col-sm-12">
+            <input type="text" id="username" class="form-control">
+          </div>
+          Password
+          <div class="col-sm-12">
+            <input type="password" id="password" class="form-control">
+          </div>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-info btn-block"
+          onclick="Login();">
+          LOGIN
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
